@@ -9,7 +9,7 @@ import { GraphQLClient } from "node_modules/@shopify/shopify-app-remix/dist/ts/s
  * @param graphql GraphQL Client
  * @returns Retrun the QR code
  */
-export async function getQRCode(id: number, graphql: GraphQLClient<any>) {
+export async function getQRCode(id: any, graphql: GraphQLClient<any>) {
   const qrCode = await db.qRCode.findFirst({where: {id}})
 
   if (!qrCode) return null;
@@ -32,7 +32,7 @@ export async function getQRCodes(shop: string, graphql: GraphQLClient<any>) {
   if (qrCodes.length === 0) return [];
 
   return Promise.all(
-    qrCodes.map((qrCodes) => supplementQRCode(qrcode, graphql))
+    qrCodes.map((qrCode) => supplementQRCode(qrCode, graphql))
   );
 }
 
