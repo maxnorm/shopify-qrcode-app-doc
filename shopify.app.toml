@@ -2,12 +2,13 @@
 
 client_id = "0bcd5edcb03fe03e220a85cefb22f852"
 name = "qrcode-doc-demo"
-application_url = "https://example.com/"
+application_url = "https://tuner-charger-idle-relevant.trycloudflare.com"
 embedded = true
 handle = "qrcode-doc-demo"
 
 [build]
 include_config_on_deploy = true
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2025-07"
@@ -25,7 +26,7 @@ api_version = "2025-07"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = ["https://tuner-charger-idle-relevant.trycloudflare.com/auth/callback", "https://tuner-charger-idle-relevant.trycloudflare.com/auth/shopify/callback", "https://tuner-charger-idle-relevant.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false

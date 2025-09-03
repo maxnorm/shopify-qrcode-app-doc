@@ -99,7 +99,7 @@ async function supplementQRCode(qrCode: QRCode, graphql: GraphQLClient<any>) {
   return {
     ...qrCode,
     productDeleted: !product?.title,
-    prodcutTitle: product?.title,
+    productTitle: product?.title,
     productImage: product?.media?.nodes[0]?.preview?.image?.url,
     productAlt: product?.media?.nodes[0]?.preview?.image?.altText,
     destinationUrl: getDestinationURL(qrCode),

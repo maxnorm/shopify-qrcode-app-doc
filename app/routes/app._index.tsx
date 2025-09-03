@@ -13,13 +13,13 @@ import {
   InlineStack
 } from "@shopify/polaris";
 
-import { getQRCode } from "app/models/QRCode.server";
+import { getQRCodes } from "app/models/QRCode.server";
 import { AlertDiamondIcon, ImageIcon } from "@shopify/polaris-icons";
 import { QRCodeData } from "../types/qrCodeData";
 
 export async function loader({request}: {request: Request}) {
   const {admin, session} = await authenticate.admin(request);
-  const qrCodes = await getQRCode(session.shop, admin.graphql)
+  const qrCodes = await getQRCodes(session.shop, admin.graphql)
 
   return json({
     qrCodes
